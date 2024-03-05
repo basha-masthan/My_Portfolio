@@ -25,7 +25,7 @@ overflow-x:hidden ;
 }
 .sec1{
 position: relative;
-height: 100vh;
+height: 90vh;
 width: 100%;
 display: flex;
 justify-content: center;
@@ -35,6 +35,11 @@ background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)), url(https://images.un
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
+}
+.s1-1{
+    width: 20px;
+    height: 20px;
+    color: wheat;
 }
 .sec1 .fa{
 display:flex;
@@ -64,6 +69,9 @@ z-index:3000;
 visibility:visible;
 opacity:1;
 bottom:40px;
+}
+.context i{
+width: 20px;
 }
 
 .bg{
@@ -166,6 +174,12 @@ background-repeat: no-repeat;
 background-position: center;
 }
 
+.context a i{
+color: rgb(126, 158, 247);
+font-size: 2rem;
+margin-right: 1rem;
+}
+
 .context{
 position: absolute;
 left: 8%;
@@ -196,9 +210,9 @@ text-decoration: none;
 
 font-weight: 700;
 }
-.context a:hover{
+/* .context a:hover{
 animation: fo 2s linear 1;
-}
+} */
 @keyframes fo{
 0%{
 margin-left: 30px;
