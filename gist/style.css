@@ -1,22 +1,94 @@
 *{
     padding: 0;margin: 0;box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .page{
+    background-color: rgb(148, 102, 102);
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
+
+
+
+
+.a{
+    margin: -20% 1%;
+    transform: rotateZ(45deg);
+    width: 300px;
+    height: 800px;
+    background-color: rgb(182, 135, 64);
+    position: absolute;
+    opacity: 0.6;
+}
+
 
 .p1{
-    width: 75vw;
-    height: 60vh;
-    background-color: rgb(185, 185, 185);
-    margin: 5vh auto ;
-    display: flex;
-    align-items: center;justify-content: center;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+.p1 h1{
+    position:relative;
+    /* top: 10px; left: 20; */
+    padding:  10px ;
+    font-size: 30px;
+}
+.p1 h1 span{
+    transform: rotateY(10deg);
+    font-size: 35px;
+    color: rgb(230, 214, 214);
+    
+    /* text-decoration: underline 3px black ; */
+}
+.p1 p{
+    
+    text-transform: uppercase;
+    margin-top: 3%;
+    font-size: 20px;
+    text-align: end;
+}
+.p1 p span{
+    font-size: 25px;
 }
 
-.p1 h1{
-    text-transform: uppercase;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+/* .b{
+    width: 300px;
+    height: 70px;
+    background-color: rgb(6, 9, 12);
+    position: absolute;
+    margin: 0px 3.2%;
+    top: 40%;left 20;
+    transform: rotateZ(45deg);
+} */
+
+
+
+.links a button{
+    padding: 20px;position: relative;
+    left: 15%;
+    top: 55px;
+    /* background-color: lightsalmon; */
+    outline: none;
+    font-size: 15px;
+    /* box-shadow: 4px 4px  rgb(61, 10, 10),-4px -4px rgb(71, 66, 66); */
+}
+@media only screen and (max-width:750px) {
+    .p1 h1{
+        width: 90%;
+        /* font-size: 32px; */
+    }
+    .a{
+        /* left: 0; */
+        height: 200px;
+        display: none;
+    }
+    .links :no-button{
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+    }
 }
