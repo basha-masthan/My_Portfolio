@@ -251,6 +251,7 @@ background: #fff;
 }
 .sec2 .container{
     padding: 20px;
+    margin: 20px;
 width: 90%;
 display: flex;
 justify-content: space-evenly;
