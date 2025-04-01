@@ -239,20 +239,20 @@ margin-left: 200px;
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    padding: 6rem 2rem;
+    /* padding: 6rem 2rem; */
     overflow: hidden;
 }
 
 .sec2 .head {
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 4.5rem;
+    font-size: 3.4rem;
     color: #1e90ff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem 3rem;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     transition: transform 0.3s ease;
 }
 
