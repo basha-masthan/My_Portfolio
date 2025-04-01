@@ -244,6 +244,10 @@
             email: email,
             message: message
         })
+        emailjs.send("service_a4qgy8o","template_htk2nzm",{
+            name: name,
+            email: email
+        })
         .then(() => {
             // Success
             formMessage.textContent = 'Message sent successfully!';
