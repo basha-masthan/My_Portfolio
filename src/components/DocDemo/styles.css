@@ -1,0 +1,191 @@
+/* DocDemo/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.doc-container {
+    font-family: 'Inter', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background: #f0f2f5;
+    color: #333;
+    overflow: hidden;
+    display: flex;
+}
+
+.doc-split-pane {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
+    border-right: 1px solid #e0e0e0;
+}
+
+.doc-split-pane:last-child {
+    border-right: none;
+    background: #fff;
+    /* Patient side slightly different */
+}
+
+/* Doctor Dashboard Styling (Left) */
+.doc-sidebar {
+    width: 250px;
+    background: #fff;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.doc-header {
+    padding: 24px;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doc-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a73e8;
+    /* Medical Blue */
+}
+
+/* Cards */
+.doc-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid #eee;
+}
+
+.doc-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 24px;
+}
+
+.doc-stat-card {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+}
+
+.doc-stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 8px;
+    color: #333;
+}
+
+.doc-stat-label {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Patient App Styling (Right - Mobile Simulation) */
+.patient-app-header {
+    background: #1a73e8;
+    color: #fff;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.patient-search-bar {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.patient-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin: 16px;
+    overflow: hidden;
+}
+
+.patient-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    background: #1a73e8;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.patient-btn:hover {
+    background: #1557b0;
+}
+
+/* Shared Components */
+.doc-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-approved {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-rejected {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.doc-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.doc-btn-accept {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.doc-btn-accept:hover {
+    background: #bbdefb;
+}
+
+.doc-btn-reject {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.doc-btn-reject:hover {
+    background: #ffcdd2;
+}
+
+/* Mobile simulated scroll area */
+.mobile-scroll-content {
+    padding-bottom: 80px;
+}
