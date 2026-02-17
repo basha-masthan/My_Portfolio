@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { resumeData } from '../data/resume';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaGlobe } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaGlobe, FaDownload } from 'react-icons/fa';
+import resumePDF from '../assets/Masthan-Basha-SDE.pdf';
 
 const Resume = () => {
     const { header, summary, skills, experience, projects, education, certifications } = resumeData;
@@ -141,28 +142,36 @@ const Resume = () => {
 
             </div>
 
-            {/* Print Button */}
+            {/* Floating Action Buttons */}
             <div className="no-print" style={{
                 position: 'fixed',
                 bottom: '30px',
                 right: '30px',
                 zIndex: 100
             }}>
-                <button
-                    onClick={() => window.print()}
+                {/* Download Button */}
+                <a
+                    href={resumePDF}
+                    download="Masthan-Basha-SDE.pdf"
                     style={{
-                        background: '#333',
+                        background: '#25D366',
                         color: '#fff',
-                        border: 'none',
+                        textDecoration: 'none',
                         padding: '12px 24px',
                         borderRadius: '50px',
                         cursor: 'pointer',
                         fontWeight: '600',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+                        boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        transition: 'transform 0.2s ease'
                     }}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                    onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                 >
-                    Print / Save PDF
-                </button>
+                    <FaDownload /> Download Resume
+                </a>
             </div>
 
             <style>{`

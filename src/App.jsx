@@ -5,7 +5,7 @@ import Resume from './components/Resume';
 import TournamentDemo from './components/TournamentDemo';
 import DocDemo from './components/DocDemo';
 import AuditDemo from './components/AuditDemo';
-import VisitorReveal from './components/VisitorReveal';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <VisitorReveal />
+      <WhatsAppButton />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/resume" element={<Resume />} />

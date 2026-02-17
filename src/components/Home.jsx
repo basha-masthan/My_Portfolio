@@ -44,7 +44,7 @@ const Home = () => {
             <Projects />
             <Contact />
 
-            <footer style={{
+            {/* <footer style={{
                 textAlign: 'center',
                 padding: '20px',
                 borderTop: '1px solid var(--glass-border)',
@@ -53,7 +53,7 @@ const Home = () => {
             }}>
                 <p>© {new Date().getFullYear()} Masthan Basha Shaik. All rights reserved.</p>
                 <p>Built with React & Framer Motion</p>
-            </footer>
+            </footer> */}
         </>
     );
 };

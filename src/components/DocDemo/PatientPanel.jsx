@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { sendEmail, SERVICE_ID, TEMPLATE_ID_APPOINTMENT } from '../../utils/emailService';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaMapMarkerAlt, FaStar, FaNotesMedical, FaSearch } from 'react-icons/fa';
 
@@ -24,15 +25,36 @@ const PatientPanel = ({ appointments, onBook }) => {
         setView('book');
     };
 
-    const handleConfirmBooking = (e) => {
+    const handleConfirmBooking = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
-        onBook({
+        const bookingData = {
             patientName: formData.get('patientName'),
+            email: formData.get('email'),
             symptoms: formData.get('symptoms'),
             date: formData.get('date'),
             time: formData.get('time')
-        });
+        };
+
+        onBook(bookingData);
+
+        try {
+            await sendEmail(SERVICE_ID, TEMPLATE_ID_APPOINTMENT, {
+                to_name: 'Admin',
+                from_name: bookingData.patientName,
+                from_email: bookingData.email,
+                message: `New Booking: ${bookingData.date} @ ${bookingData.time} - ${bookingData.symptoms}`,
+                reply_to: bookingData.email,
+                patient_name: bookingData.patientName,
+                appointment_date: bookingData.date,
+                appointment_time: bookingData.time,
+                symptoms: bookingData.symptoms,
+                user_email: bookingData.email
+            });
+        } catch (error) {
+            console.error("Email send failed", error);
+        }
+
         setView('success');
         setTimeout(() => setView('home'), 2000);
     };
@@ -136,6 +158,11 @@ const PatientPanel = ({ appointments, onBook }) => {
                                 <div style={{ marginBottom: '15px' }}>
                                     <label style={{ display: 'block', fontSize: '0.9rem', marginBottom: '5px', fontWeight: 600 }}>Patient Name</label>
                                     <input name="patientName" required placeholder="Enter full name" defaultValue="Jane Doe" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ddd' }} />
+                                </div>
+
+                                <div style={{ marginBottom: '15px' }}>
+                                    <label style={{ display: 'block', fontSize: '0.9rem', marginBottom: '5px', fontWeight: 600 }}>Email (for confirmation)</label>
+                                    <input name="email" type="email" required placeholder="Enter your email" style={{ width: '100%', padding: '10px', borderRadius: '6px', border: '1px solid #ddd' }} />
                                 </div>
 
                                 <div style={{ marginBottom: '15px' }}>
