@@ -1,14 +1,14 @@
 :root {
-  --bg-color: #050505;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --accent-primary: #00f2ff;
-  --accent-secondary: #bc13fe;
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --bg-color: #030712;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #8b5cf6;
+  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
   --font-main: 'Inter', sans-serif;
   --font-heading: 'Outfit', sans-serif;
-  --card-bg: #111111;
+  --card-bg: #0f172a;
 }
 
 h1,
@@ -68,11 +68,12 @@ ul {
 }
 
 .neon-text {
-  text-shadow: 0 0 10px var(--accent-primary), 0 0 20px var(--accent-primary);
+  color: var(--accent-primary);
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
 .gradient-text {
-  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -116,8 +117,9 @@ h2 {
 
 .btn:hover {
   background: var(--accent-primary);
-  color: var(--bg-color);
-  box-shadow: 0 0 20px var(--accent-primary);
+  color: #fff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
 }
 
 /* Background Animation Placeholder */
@@ -129,4 +131,158 @@ h2 {
   height: 100%;
   z-index: -1;
   pointer-events: none;
+}
+
+/* Side Navbar - Snake Chain Styles */
+.home-container {
+  padding-left: 100px;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding-left: 0;
+    padding-bottom: 80px;
+  }
+}
+
+.side-navbar {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .side-navbar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    background: rgba(3, 7, 18, 0.9);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--glass-border);
+    padding: 10px 0;
+  }
+}
+
+.snake-chain {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .snake-chain {
+    flex-direction: row;
+    gap: 15px;
+  }
+}
+
+.snake-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: var(--glass-border);
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .snake-line {
+    display: none;
+  }
+}
+
+.nav-node {
+  position: relative;
+  z-index: 1;
+}
+
+.node-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.node-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .node-circle {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.node-icon {
+  font-size: 1rem;
+  color: inherit;
+}
+
+.node-text {
+  position: absolute;
+  left: 55px;
+  background: var(--glass-bg);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .node-text {
+    display: none;
+  }
+}
+
+.nav-node:hover .node-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav-node.active .node-text {
+  opacity: 1;
+  transform: translateX(0);
+  background: var(--accent-primary);
+  color: #fff;
+  border-color: var(--accent-primary);
+}
+
+.nav-node:hover .node-link {
+  color: var(--accent-primary);
+}
+
+.nav-node.active .node-link {
+  color: #fff;
 }

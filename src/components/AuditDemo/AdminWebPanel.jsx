@@ -261,7 +261,7 @@ const TemplateBuilder = () => {
                         </div>
 
                         <div style={{ marginBottom: '16px' }}>
-                            <label style={{ display: 'block', fontSize: '0.9rem', marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <label style={{ fontSize: '0.9rem', marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 <FaLayerGroup style={{ color: '#f59e0b' }} /> Conditional Logic (Optional)
                             </label>
                             <input value={qCondition} onChange={e => setQCondition(e.target.value)} className="mobile-input" placeholder="e.g., IF Answer = 'No' THEN Require Photo" />

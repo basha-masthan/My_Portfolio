@@ -43,7 +43,7 @@ const Navbar = () => {
                 </a>
 
                 {/* Desktop Menu */}
-                <div className="desktop-menu" style={{ display: 'none', gap: '30px', '@media (min-width: 768px)': { display: 'flex' } }}>
+                <div className="desktop-menu" style={{ display: 'none', gap: '30px' }}>
                     <style>{`
             @media (min-width: 768px) {
               .desktop-menu { display: flex !important; }

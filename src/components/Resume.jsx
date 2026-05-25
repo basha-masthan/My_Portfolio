@@ -134,7 +134,7 @@ const Resume = () => {
                         </h3>
                         <ul style={{ paddingLeft: '20px', fontSize: '0.9rem', color: '#444' }}>
                             {certifications.map((cert, i) => (
-                                <li key={i} style={{ marginBottom: '5px' }}>{cert}</li>
+                                <li key={i} style={{ marginBottom: '5px' }}>{cert.title} | {cert.issuer}</li>
                             ))}
                         </ul>
                     </section>

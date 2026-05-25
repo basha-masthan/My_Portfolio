@@ -5,6 +5,7 @@ import Resume from './components/Resume';
 import TournamentDemo from './components/TournamentDemo';
 import DocDemo from './components/DocDemo';
 import AuditDemo from './components/AuditDemo';
+import JobHuntDemo from './components/JobHuntDemo';
 import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
@@ -44,6 +45,11 @@ function App() {
         <Route path="/project-demo/audit" element={
           <React.Suspense fallback={<div>Loading Demo...</div>}>
             <AuditDemo />
+          </React.Suspense>
+        } />
+        <Route path="/project-demo/jobhunt" element={
+          <React.Suspense fallback={<div>Loading Demo...</div>}>
+            <JobHuntDemo />
           </React.Suspense>
         } />
       </Routes>

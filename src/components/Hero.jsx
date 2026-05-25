@@ -8,12 +8,13 @@ const Hero = () => {
 
     return (
         <section id="home" style={{
-            height: '100vh',
+            minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
-            padding: 0
+            paddingTop: '100px',
+            paddingBottom: '40px'
         }}>
             <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                 <motion.div

@@ -83,9 +83,9 @@ const Skills = () => {
                         >
                             <h4 style={{ color: 'var(--accent-primary)', marginBottom: '20px' }}>Certifications</h4>
                             <ul style={{ paddingLeft: '20px', listStyleType: 'disc' }}>
-                                {resumeData.certifications.map((cert, i) => (
-                                    <li key={i} style={{ marginBottom: '10px', color: 'var(--text-secondary)' }}>{cert}</li>
-                                ))}
+                                    {resumeData.certifications.map((cert, i) => (
+                                        <li key={i} style={{ marginBottom: '10px', color: 'var(--text-secondary)' }}>{cert.title} | {cert.issuer}</li>
+                                    ))}
                             </ul>
                         </motion.div>
 

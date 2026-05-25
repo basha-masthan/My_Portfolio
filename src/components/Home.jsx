@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './Navbar';
+import SideNavbar from './SideNavbar';
 import Hero from './Hero';
 import About from './About';
 import Skills from './Skills';
@@ -7,6 +7,8 @@ import Experience from './Experience';
 import Projects from './Projects';
 import Contact from './Contact';
 import Background from './Background';
+import Education from './Education';
+import Certifications from './Certifications';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 const Home = () => {
@@ -18,9 +20,9 @@ const Home = () => {
     });
 
     return (
-        <>
+        <div className="home-container">
             <Background />
-            <Navbar />
+            <SideNavbar />
 
             {/* Scroll Progress Bar */}
             <motion.div
@@ -41,6 +43,8 @@ const Home = () => {
             <About />
             <Skills />
             <Experience />
+            <Education />
+            <Certifications />
             <Projects />
             <Contact />
 
@@ -54,7 +58,7 @@ const Home = () => {
                 <p>© {new Date().getFullYear()} Masthan Basha Shaik. All rights reserved.</p>
                 <p>Built with React & Framer Motion</p>
             </footer> */}
-        </>
+        </div>
     );
 };
 
